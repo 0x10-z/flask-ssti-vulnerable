@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block form %}
+<main class="form-signin">
+  <form method="POST" class="needs-validation" novalidate>
+    <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" height="57">
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+    <div class="form-floating">
+      <input type="text" class="form-control {% if data %}is-invalid{% endif %}" id="floatingInput" name="username" placeholder="Username">
+      <label for="floatingInput">User</label>
+      <div class="invalid-feedback">
+        {% block response %}
+
+        {% endblock %}
+      </div>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">&copy; {{ now.year }}        </p>
+  </form>
+</main>
+{% endblock %}
